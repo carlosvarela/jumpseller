@@ -1,0 +1,1193 @@
+// add in your header
+
+{% if  options.opengraph != blank %}
+<meta property="og:image" content="{{ options.opengraph }}" />
+{% else %}
+<meta property="og:image" content="https://jumpseller.com/images/icons/fb-logo.jpg" />
+{% endif %}
+
+//add in your options.json
+
+"opengraph": {
+        "name": "Social Network Image",
+        "type": "file",
+        "default": "",
+        "help": "The size of the image file must not exceed 8 MB. Use images that are at least 1200 x 630"
+      },
+      
+// Example on simple theme on file options.json
+{
+  "Geral": {
+    "icon": "cog",
+    "options": {
+      "favicon": {
+        "name": "Favicon (Ícone do Navegador)",
+        "type": "file",
+        "default": "",
+        "help": ""
+      },
+      "opengraph": {
+        "name": "Social Network Image",
+        "type": "file",
+        "default": "",
+        "help": "The size of the image file must not exceed 8 MB. Use images that are at least 1200 x 630"
+      },
+      "success_page_product_table": {
+        "name": "Tabela de Produtos na Página de Sucesso",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "featured_on_search": {
+        "name": "Mostrar produtos em destaque quando não há resultados de pesquisa",
+        "type": "checkbox",
+        "default": "1",
+        "help": ""
+      },
+      "products_category_limit": {
+        "name": "Produtos por Página em Categorias",
+        "type": "select",
+        "default": "12",
+        "help": "",
+        "options": [
+          {
+            "4": "4"
+          },
+          {
+            "8": "8"
+          },
+          {
+            "12": "12"
+          },
+          {
+            "16": "16"
+          },
+          {
+            "20": "20"
+          },
+          {
+            "24": "24"
+          },
+          {
+            "28": "28"
+          },
+          {
+            "32": "32"
+          },
+          {
+            "36": "36"
+          }
+        ]
+      },
+      "products_search_limit": {
+        "name": "Produtos por Página no Resultado da Pesquisa",
+        "type": "select",
+        "default": "12",
+        "help": "",
+        "options": [
+          {
+            "4": "4"
+          },
+          {
+            "8": "8"
+          },
+          {
+            "12": "12"
+          },
+          {
+            "16": "16"
+          },
+          {
+            "20": "20"
+          },
+          {
+            "24": "24"
+          },
+          {
+            "28": "28"
+          },
+          {
+            "32": "32"
+          },
+          {
+            "36": "36"
+          }
+        ]
+      },
+      "page_post_per_page": {
+        "name": "Artigos de Blogue por Página",
+        "type": "select",
+        "default": "3",
+        "help": "",
+        "options": [
+          {
+            "3": "3"
+          },
+          {
+            "6": "6"
+          },
+          {
+            "9": "9"
+          },
+          {
+            "12": "12"
+          },
+          {
+            "15": "15"
+          },
+          {
+            "18": "18"
+          },
+          {
+            "21": "21"
+          },
+          {
+            "24": "24"
+          },
+          {
+            "27": "27"
+          },
+          {
+            "30": "30"
+          }
+        ]
+      }
+    }
+  },
+  "Informação de Loja": {
+    "icon": "store",
+    "options": {
+      "display_contact_email": {
+        "name": "Mostrar Email de Contato",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "phone": {
+        "name": "Número de Contato",
+        "type": "input",
+        "default": "",
+        "help": ""
+      }
+    }
+  },
+  "Cabeçalho": {
+    "icon": "window-maximize",
+    "options": {
+      "full-width-header": {
+        "name": "Mostrar comprimento total de Cabeçalho",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "fixed_header": {
+        "name": "Cabeçalho Fixo",
+        "type": "select",
+        "default": "Top Bar",
+        "help": "",
+        "options": [
+          {
+            "Top Bar": "Top Bar"
+          },
+          {
+            "Menu": "Menu"
+          },
+          {
+            "None": "None"
+          }
+        ]
+      },
+      "header_icons_size": {
+        "name": "Tamanho dos ícones de Cabeçalho",
+        "type": "select",
+        "default": "18px",
+        "help": "",
+        "options": [
+          {
+            "16px": "16px"
+          },
+          {
+            "18px (Default)": "18px"
+          },
+          {
+            "20px": "20px"
+          },
+          {
+            "22px": "22px"
+          }
+        ]
+      },
+      "header_bg": {
+        "name": "Cor do Fundo  de Cabeçalho",
+        "type": "color",
+        "default": "ffffff",
+        "help": ""
+      },
+      "header_color": {
+        "name": "Cor do Texto  de Cabeçalho",
+        "type": "color",
+        "default": "000000",
+        "help": ""
+      },
+      "vertical-menu": {
+        "name": "Mostrar o Menu Principal Verticalmente",
+        "type": "checkbox",
+        "default": "1",
+        "help": ""
+      },
+      "horizontal-alignment-menu": {
+        "name": "Alinhamento do Menu Principal",
+        "type": "select",
+        "default": "Center",
+        "help": "",
+        "options": [
+          {
+            "Left": "Left"
+          },
+          {
+            "Center (by Default)": "Center"
+          }
+        ]
+      },
+      "menu_bg": {
+        "name": "Cor do Fundo  de Menu",
+        "type": "color",
+        "default": "ffffff",
+        "help": ""
+      },
+      "menu_color": {
+        "name": "Cor do Texto  de Menu",
+        "type": "color",
+        "default": "000000",
+        "help": ""
+      },
+      "menu_hover_bg": {
+        "name": "Fundo do Menu ao passar o Mouse",
+        "type": "color",
+        "default": "f9f9f9",
+        "help": ""
+      },
+      "topbar": {
+        "name": "Mostrar Barra Superior",
+        "type": "checkbox",
+        "default": "1",
+        "help": ""
+      },
+      "topbar_text": {
+        "name": "Texto da barra superior",
+        "type": "text",
+        "default": "Entregas grátis para encomendas a parte de <b>50€</b>",
+        "help": ""
+      },
+      "topbar_bg": {
+        "name": "Fundo da barra superior",
+        "type": "color",
+        "default": "333333",
+        "help": ""
+      },
+      "topbar_color": {
+        "name": "Cor do texto da barra superior",
+        "type": "color",
+        "default": "ffffff",
+        "help": ""
+      }
+    }
+  },
+  "Bloco do produto": {
+    "icon": "archive",
+    "options": {
+      "show_brand": {
+        "name": "Marca do Produto na Lista de Produtos",
+        "type": "checkbox",
+        "default": "1",
+        "help": ""
+      },
+      "show_add_to_cart": {
+        "name": "Mostrar Botão Adicionar ao Carrinho",
+        "type": "checkbox",
+        "default": "1",
+        "help": ""
+      },
+      "product_block_2_columns": {
+        "name": "Mostrar 2 colunas na versão móvel",
+        "type": "checkbox",
+        "default": "1",
+        "help": ""
+      },
+      "from-prices": {
+        "name": "Mostrar 'desde' nos Preços de Produtos com Variantes",
+        "type": "checkbox",
+        "default": "1",
+        "help": ""
+      },
+      "not_available_img": {
+        "name": "Imagem em escala de cinza em Produtos não disponíveis",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "product_shadow": {
+        "name": "Mostrar sombra da caixa ao passar o mouse",
+        "type": "checkbox",
+        "default": "1",
+        "help": ""
+      },
+      "sale_tag": {
+        "name": "Cor da etiqueta de promoções",
+        "type": "color",
+        "default": "f44336",
+        "help": ""
+      },
+      "sale_tag_text": {
+        "name": "Texto de promoções",
+        "type": "input",
+        "default": "Promoção",
+        "help": ""
+      }
+    }
+  },
+  "Página do Produto": {
+    "icon": "archive",
+    "options": {
+      "product_stock_visibility": {
+        "name": "Mostrar Stock do Produto",
+        "type": "checkbox",
+        "default": "1",
+        "help": ""
+      },
+      "product_sku_visibility": {
+        "name": "Mostrar SKU do Produto",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "related_products_visibility": {
+        "name": "Mostrar Produtos Relacionados",
+        "type": "checkbox",
+        "default": "1",
+        "help": ""
+      },
+      "related_products_limit": {
+        "name": "Quantidade máxima de produtos relacionados",
+        "type": "select",
+        "default": "8",
+        "help": "",
+        "options": [
+          {
+            "4": "4"
+          },
+          {
+            "8": "8"
+          },
+          {
+            "12": "12"
+          },
+          {
+            "16": "16"
+          },
+          {
+            "20": "20"
+          },
+          {
+            "24": "24"
+          },
+          {
+            "28": "28"
+          },
+          {
+            "32": "32"
+          },
+          {
+            "36": "36"
+          },
+          {
+            "40": "40"
+          }
+        ]
+      }
+    }
+  },
+  "Cores": {
+    "icon": "tint",
+    "options": {
+      "primary_color": {
+        "name": "Cor Principal",
+        "type": "color",
+        "default": "222222",
+        "help": ""
+      },
+      "store_background": {
+        "name": "Fundo de Loja",
+        "type": "color",
+        "default": "ffffff",
+        "help": ""
+      },
+      "store_text_color": {
+        "name": "Cor do Texto da Loja",
+        "type": "color",
+        "default": "333333",
+        "help": ""
+      },
+      "main_button_color": {
+        "name": "Cor do Botão Principal",
+        "type": "color",
+        "default": "4ec0a6",
+        "help": ""
+      },
+      "main_button_color_hover": {
+        "name": "Cor do Botão Principal ao passar o rato",
+        "type": "color",
+        "default": "333333",
+        "help": ""
+      },
+      "secondary_button_color": {
+        "name": "Cor do Botão Secundário",
+        "type": "color",
+        "default": "666666",
+        "help": ""
+      },
+      "adc_button_color": {
+        "name": "Cor do Botão Adicionar ao Carrinho",
+        "type": "color",
+        "default": "e22323",
+        "help": ""
+      },
+      "links_color": {
+        "name": "Cores dos Links",
+        "type": "color",
+        "default": "333333",
+        "help": ""
+      },
+      "links_color_hover": {
+        "name": "Cores dos Links ao passar o rato",
+        "type": "color",
+        "default": "4ec0a6",
+        "help": ""
+      },
+      "footer_background_color": {
+        "name": "Cor do Rodapé",
+        "type": "color",
+        "default": "f9f9f9",
+        "help": ""
+      },
+      "footer_color": {
+        "name": "Cor do texto do rodapé",
+        "type": "color",
+        "default": "333333",
+        "help": ""
+      }
+    }
+  },
+  "Tipos de Letra": {
+    "icon": "font",
+    "options": {
+      "general_font": {
+        "name": "Geral",
+        "type": "google_font",
+        "default": "Open Sans",
+        "help": "",
+        "options": [
+          {
+            "Droid Serif": "Droid Serif"
+          },
+          {
+            "Gentium Basic": "Gentium Basic"
+          },
+          {
+            "Lato": "Lato"
+          },
+          {
+            "Montserrat": "Montserrat"
+          },
+          {
+            "Noto Sans": "Noto Sans"
+          },
+          {
+            "Open Sans (by Default)": "Open Sans"
+          },
+          {
+            "Playfair Display": "Playfair Display"
+          },
+          {
+            "Quicksand": "Quicksand"
+          },
+          {
+            "Raleway": "Raleway"
+          },
+          {
+            "Roboto": "Roboto"
+          },
+          {
+            "Roboto Slab": "Roboto Slab"
+          },
+          {
+            "Roboto Condensed": "Roboto Condensed"
+          }
+        ]
+      },
+      "titles_font": {
+        "name": "Títulos",
+        "type": "google_font",
+        "default": "Montserrat",
+        "help": "",
+        "options": [
+          {
+            "Abril Fatface": "Abril Fatface"
+          },
+          {
+            "Architects Daughter": "Architects Daughter"
+          },
+          {
+            "Fredericka the Great": "Fredericka the Great"
+          },
+          {
+            "Glegoo": "Glegoo"
+          },
+          {
+            "Handlee": "Handlee"
+          },
+          {
+            "Josefin Slab": "Josefin Slab"
+          },
+          {
+            "Julius Sans One": "Julius Sans One"
+          },
+          {
+            "Lato": "Lato"
+          },
+          {
+            "Libre Baskerville": "Libre Baskerville"
+          },
+          {
+            "Montserrat (by Default)": "Montserrat"
+          },
+          {
+            "Open Sans": "Open Sans"
+          },
+          {
+            "Philosopher": "Philosopher"
+          },
+          {
+            "Poiret One": "Poiret One"
+          },
+          {
+            "Roboto": "Roboto"
+          },
+          {
+            "Special Elite": "Special Elite"
+          }
+        ]
+      },
+      "store_name": {
+        "name": "Nome de Loja",
+        "type": "google_font",
+        "default": "Montserrat",
+        "help": "",
+        "options": [
+          {
+            "Abril Fatface": "Abril Fatface"
+          },
+          {
+            "Architects Daughter": "Architects Daughter"
+          },
+          {
+            "Fredericka the Great": "Fredericka the Great"
+          },
+          {
+            "Libre Baskerville": "Libre Baskerville"
+          },
+          {
+            "Montserrat (by Default)": "Montserrat"
+          },
+          {
+            "Open Sans": "Open Sans"
+          },
+          {
+            "Playfair Display": "Playfair Display"
+          },
+          {
+            "Poiret One": "Poiret One"
+          },
+          {
+            "Raleway": "Raleway"
+          },
+          {
+            "Roboto": "Roboto"
+          },
+          {
+            "Old Standard TT": "Old Standard TT"
+          },
+          {
+            "Yatra One": "Yatra One"
+          }
+        ]
+      },
+      "general_font_size": {
+        "name": "Tamanho de Letra Geral",
+        "type": "select",
+        "default": "16px",
+        "help": "",
+        "options": [
+          {
+            "10px": "10px"
+          },
+          {
+            "11px": "11px"
+          },
+          {
+            "12px": "12px"
+          },
+          {
+            "13px": "13px"
+          },
+          {
+            "14px": "14px"
+          },
+          {
+            "15px": "15px"
+          },
+          {
+            "16px (by Default)": "16px"
+          },
+          {
+            "17px": "17px"
+          },
+          {
+            "18px": "18px"
+          }
+        ]
+      },
+      "title_font_size": {
+        "name": "Tamanho de Letra de Título",
+        "type": "select",
+        "default": "34px",
+        "help": "",
+        "options": [
+          {
+            "12px": "12px"
+          },
+          {
+            "14px": "14px"
+          },
+          {
+            "16px": "16px"
+          },
+          {
+            "18px": "18px"
+          },
+          {
+            "20px": "20px"
+          },
+          {
+            "22px": "22px"
+          },
+          {
+            "24px": "24px"
+          },
+          {
+            "26px": "26px"
+          },
+          {
+            "28px": "28px"
+          },
+          {
+            "30px": "30px"
+          },
+          {
+            "32px": "32px"
+          },
+          {
+            "34px (by Default)": "34px"
+          },
+          {
+            "36px": "36px"
+          },
+          {
+            "38px": "38px"
+          },
+          {
+            "40px": "40px"
+          }
+        ]
+      },
+      "block_title_font_size": {
+        "name": "Tamanho de Letra dos Blocos de Títulos",
+        "type": "select",
+        "default": "28px",
+        "help": "",
+        "options": [
+          {
+            "12px": "12px"
+          },
+          {
+            "14px": "14px"
+          },
+          {
+            "16px": "16px"
+          },
+          {
+            "18px": "18px"
+          },
+          {
+            "20px": "20px"
+          },
+          {
+            "22px": "22px"
+          },
+          {
+            "24px": "24px"
+          },
+          {
+            "26px": "26px"
+          },
+          {
+            "28px (by Default)": "28px"
+          },
+          {
+            "30px": "30px"
+          },
+          {
+            "32px": "32px"
+          },
+          {
+            "34px": "34px"
+          },
+          {
+            "36px": "36px"
+          },
+          {
+            "38px": "38px"
+          },
+          {
+            "40px": "40px"
+          }
+        ]
+      },
+      "store_name_font_size": {
+        "name": "Tamanho de Letra de Nome de Loja",
+        "type": "select",
+        "default": "40px",
+        "help": "",
+        "options": [
+          {
+            "14px": "14px"
+          },
+          {
+            "15px": "15px"
+          },
+          {
+            "16px": "16px"
+          },
+          {
+            "17px": "17px"
+          },
+          {
+            "18px": "18px"
+          },
+          {
+            "20px": "20px"
+          },
+          {
+            "22px": "22px"
+          },
+          {
+            "24px": "24px"
+          },
+          {
+            "26px": "26px"
+          },
+          {
+            "28px": "28px"
+          },
+          {
+            "30px": "30px"
+          },
+          {
+            "32px": "32px"
+          },
+          {
+            "34px": "34px"
+          },
+          {
+            "36px": "36px"
+          },
+          {
+            "38px": "38px"
+          },
+          {
+            "40px (by Default)": "40px"
+          }
+        ]
+      },
+      "menu_font_size": {
+        "name": "Tamanho de Letra de Menu",
+        "type": "select",
+        "default": "14px",
+        "help": "",
+        "options": [
+          {
+            "10px": "10px"
+          },
+          {
+            "11px": "11px"
+          },
+          {
+            "12px": "12px"
+          },
+          {
+            "13px": "13px"
+          },
+          {
+            "14px (by Default)": "14px"
+          },
+          {
+            "15px": "15px"
+          },
+          {
+            "16px": "16px"
+          },
+          {
+            "17px": "17px"
+          },
+          {
+            "18px": "18px"
+          },
+          {
+            "20px": "20px"
+          }
+        ]
+      }
+    }
+  },
+  "Redes Sociais": {
+    "icon": "share-alt",
+    "options": {
+      "facebook_button_on_products": {
+        "name": "Botão de Facebook nos Produtos",
+        "type": "checkbox",
+        "default": "1",
+        "help": ""
+      },
+      "twitter_button_on_products": {
+        "name": "Botão de Twitter nos Produtos",
+        "type": "checkbox",
+        "default": "1",
+        "help": ""
+      },
+      "pinterest_button_on_products": {
+        "name": "Botão de Pinterest nos Produtos",
+        "type": "checkbox",
+        "default": "1",
+        "help": ""
+      },
+      "tumblr_button_on_products": {
+        "name": "Botão de Tumblr nos Produtos",
+        "type": "checkbox",
+        "default": "1",
+        "help": ""
+      },
+      "whatsapp_button_on_products": {
+        "name": "Botão de Whatsapp nos Produtos em Mobile",
+        "type": "checkbox",
+        "default": "1",
+        "help": ""
+      }
+    }
+  },
+  "Rodapé": {
+    "icon": "ellipsis-h",
+    "options": {
+      "logo_footer": {
+        "name": "Logotipo so Rodapé",
+        "type": "file",
+        "default": "",
+        "help": ""
+      },
+      "footer_description": {
+        "name": "Breve Descrição de Loja",
+        "type": "text",
+        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis auctor justo. Curabitur pretium nulla non nisl tempus, id semper lacus scelerisque. ",
+        "help": ""
+      },
+      "show_footer_description": {
+        "name": "Mostrar Descrição",
+        "type": "checkbox",
+        "default": "1",
+        "help": ""
+      },
+      "enable_subscribe": {
+        "name": "Ativar Formulário de Subscrição",
+        "type": "checkbox",
+        "default": "1",
+        "help": ""
+      },
+      "mailchimp_post_url": {
+        "name": "URL do Formulário da Newsletter Mailchimp",
+        "type": "input",
+        "default": "",
+        "help": ""
+      },
+      "newsletter_text": {
+        "name": "Descrição da Newsletter",
+        "type": "text",
+        "default": "Subreve o nossos emails para receber novidades e ofertas em primeira mão.",
+        "help": ""
+      }
+    }
+  },
+  "Métodos de pagamento para mostrar": {
+    "icon": "credit-card",
+    "options": {
+      "webpay_payment": {
+        "name": "Mostrar Pagamentos por Webpay",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "chek_payment": {
+        "name": "Mostrar Pagamentos por Chek",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "khipu_payment": {
+        "name": "Mostrar Pagamentos por Khipu",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "servipag_payment": {
+        "name": "Mostrar Pagamentos por Servipag",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "mach_payment": {
+        "name": "Mostrar Pagamentos por Mach",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "flow_payment": {
+        "name": "Mostrar Pagamentos por Flow",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "caja_vecina_payment": {
+        "name": "Mostrar Pagamentos por Caja Vecina",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "multicaja_payment": {
+        "name": "Mostrar Pagamentos por Multicaja",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "pse_payment": {
+        "name": "Mostrar Pagamentos por PSE",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "baloto_payment": {
+        "name": "Mostrar Pagamentos por Baloto",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "epayco_payment": {
+        "name": "Mostrar Pagamentos por ePayco",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "efecty_payment": {
+        "name": "Mostrar Pagamentos por Efecty",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "oxxo_payment": {
+        "name": "Mostrar Pagamentos por Oxxo",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "mercadopago_payment": {
+        "name": "Mostrar Pagamentos por Mercadopago",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "multibanco_payment": {
+        "name": "Mostrar Pagamentos por Multibanco",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "mbway_payment": {
+        "name": "Mostrar Pagamentos por MBWay",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "payu_payment": {
+        "name": "Mostrar Pagamentos por PayU",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "ideal_payment": {
+        "name": "Mostrar Pagamentos por iDEAL",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "skrill_payment": {
+        "name": "Mostrar Pagamentos por Skrill",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "stripe_payment": {
+        "name": "Mostrar Pagamentos por Stripe",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "apple_payment": {
+        "name": "Mostrar Pagamentos por Apple Pay",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "bitcoin_payment": {
+        "name": "Mostrar Pagamentos por Bitcoin",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "visa_payment": {
+        "name": "Mostrar Pagamentos por Visa",
+        "type": "checkbox",
+        "default": "1",
+        "help": ""
+      },
+      "mastercard_payment": {
+        "name": "Mostrar Pagamentos por MasterCard",
+        "type": "checkbox",
+        "default": "1",
+        "help": ""
+      },
+      "american_payment": {
+        "name": "Mostrar Pagamentos por American Express",
+        "type": "checkbox",
+        "default": "1",
+        "help": ""
+      },
+      "paypal_payment": {
+        "name": "Mostrar Pagamentos por Paypal",
+        "type": "checkbox",
+        "default": "1",
+        "help": ""
+      },
+      "diners_payment": {
+        "name": "Mostrar Pagamentos por Diners Club",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "bank_transfer_payment": {
+        "name": "Mostrar Pagamentos por Transferencia Bancaria",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "manual_payment": {
+        "name": "Mostrar Pagamento Manual",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      }
+    }
+  },
+  "Notificação de Adicionar ao Carrinho": {
+    "icon": "shopping-cart",
+    "options": {
+      "display_cart_notification": {
+        "name": "Notificação de Adicionar ao Carrinho",
+        "type": "checkbox",
+        "default": "1",
+        "help": ""
+      },
+      "cart_notification_color": {
+        "name": "Cor da Notificação",
+        "type": "color",
+        "default": "28a745",
+        "help": ""
+      }
+    }
+  },
+  "Outras Opções": {
+    "icon": "cogs",
+    "options": {
+      "new_customer_message": {
+        "name": "Mensagem de Novo Cliente",
+        "type": "text",
+        "default": "Registar-se na nossa loja permitir-lhe-á acelerar o processo de checkout, adicionar múltiplos endereços de envio, ver e seguir encomendas e muito mais.",
+        "help": ""
+      },
+      "currencies": {
+        "name": "Moedas adicionais (ex. USD, EUR)",
+        "type": "input",
+        "default": "",
+        "help": ""
+      },
+      "open_exchange_rates_token": {
+        "name": "ID de Aplicação de OpenExchangeRates",
+        "type": "input",
+        "default": "",
+        "help": ""
+      },
+      "widget_blog_title": {
+        "name": "Título do Widget de Blog",
+        "type": "input",
+        "default": "Side Widget Blog",
+        "help": ""
+      },
+      "widget_blog_text": {
+        "name": "Texto do Widget de Blog",
+        "type": "text",
+        "default": "Registar-se na nossa loja permitir-lhe-á acelerar o processo de checkout, adicionar múltiplos endereços de envio, ver e seguir encomendas e muito mais. Pode editar este text em: Temas > Opções do Tema > BLog",
+        "help": ""
+      },
+      "disable_shopping_cart": {
+        "name": "Desativar Carrinho de Compras",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "hide_price": {
+        "name": "Ocultar Preços",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "head_code": {
+        "name": "Introduzir código no final do <head>",
+        "type": "text",
+        "default": "",
+        "help": ""
+      },
+      "body_code": {
+        "name": "Introduzir código no final do <body>",
+        "type": "text",
+        "default": "",
+        "help": ""
+      }
+    }
+  }
+}
