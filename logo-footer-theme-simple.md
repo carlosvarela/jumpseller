@@ -1,4 +1,4 @@
-    // Add this html code in your footer file footer.liquid around line 100
+ // Add this html code in your footer file footer.liquid around line 100
     
          <a href="{{store.url}}" title="{{store.name}}" class="brand-footer">
           {% if options.logo_footer != empty %}
@@ -9,7 +9,7 @@
         </a>
         
         
-  // Add this snippet to your options.json
+// Add this snippet to your options.json
   
    "logo_footer": {
         "name": "Logo Pie de Página",
