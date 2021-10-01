@@ -1,4 +1,84 @@
-          <ul class="list-inline payment text-lg-right text-center">
+        
+        <!-- add this snippet to options.json file -->
+        
+          "Footer": {
+    "icon": "ellipsis-h",
+    "options": {
+
+ "visa_payment": {
+        "name": "Mostrar Pagamentos por Visa",
+        "type": "checkbox",
+        "default": "1",
+        "help": ""
+      },
+      "mastercard_payment": {
+        "name": "Mostrar Pagamentos por MasterCard",
+        "type": "checkbox",
+        "default": "1",
+        "help": ""
+      },
+      "american_payment": {
+        "name": "Mostrar Pagamentos por American Express",
+        "type": "checkbox",
+        "default": "1",
+        "help": ""
+      },
+      "paypal_payment": {
+        "name": "Mostrar Pagamentos por Paypal",
+        "type": "checkbox",
+        "default": "1",
+        "help": ""
+      },
+      "diners_payment": {
+        "name": "Mostrar Pagamentos por Diners Club",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "webpay_payment": {
+        "name": "Mostrar Pagamentos por Webpay",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "oxxo_payment": {
+        "name": "Mostrar Pagamentos por Oxxo",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "multibanco_payment": {
+        "name": "Mostrar Pagamentos por Multibanco",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "payu_payment": {
+        "name": "Mostrar Pagamentos por PayU",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "bank_transfer_payment": {
+        "name": "Mostrar Pagamentos por Transferencia Bancaria",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+      },
+      "manual_payment": {
+        "name": "Mostrar Pagamento Manual",
+        "type": "checkbox",
+        "default": "0",
+        "help": ""
+       }
+      }
+    },
+  
+        
+        <!-- html liquid code for footer or any other place-->
+        
+        
+        <ul class="list-inline payment text-lg-right text-center">
           {% if options.webpay_payment %}<li class="list-inline-item"><span class=""><img src="{{ 'pay-webpay.png' | asset }}" alt="Webpay"></span></li>{% endif %}
           {% if options.oxxo_payment %}<li class="list-inline-item"><span class=""><img src="{{ 'pay-oxxo.png' | asset }}" alt="Oxxo"></span></li>{% endif %}
           {% if options.multibanco_payment %}<li><span class=""><img src="{{ 'pay-multibanco.png' | asset }}" alt="Multibanco"></span></li>{% endif %}
