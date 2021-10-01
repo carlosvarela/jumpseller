@@ -1,0 +1,43 @@
+          <ul class="list-inline payment text-lg-right text-center">
+          {% if options.webpay_payment %}<li class="list-inline-item"><span class=""><img src="{{ 'pay-webpay.png' | asset }}" alt="Webpay"></span></li>{% endif %}
+          {% if options.oxxo_payment %}<li class="list-inline-item"><span class=""><img src="{{ 'pay-oxxo.png' | asset }}" alt="Oxxo"></span></li>{% endif %}
+          {% if options.multibanco_payment %}<li><span class=""><img src="{{ 'pay-multibanco.png' | asset }}" alt="Multibanco"></span></li>{% endif %}
+          {% if options.payu_payment %}<li class="list-inline-item"><span class=""><img src="{{ 'pay-payu.png' | asset }}" alt="PayU"></span></li>{% endif %}
+          {% if options.visa_payment %}<li class="list-inline-item"><span class=""><img src="{{ 'pay-visa.png' | asset }}" alt="Visa"></span></li>{% endif %}
+          {% if options.mastercard_payment %}<li class="list-inline-item"><span class=""><img src="{{ 'pay-master.png' | asset }}"  alt="Mastercard"></span></li>{% endif %}
+          {% if options.american_payment %}<li class="list-inline-item"><span class=""><img src="{{ 'pay-american.png' | asset }}" alt="American Express"></span></li>{% endif %}
+          {% if options.paypal_payment %}<li class="list-inline-item"><span class=""><img src="{{ 'pay-paypal.png' | asset }}" alt="Paypal"></span></li>{% endif %}
+          {% if options.diners_payment %}<li class="list-inline-item"><span class=""><img src="{{ 'pay-diners.png' | asset }}" alt="Diners Club"></span></li>{% endif %}
+          {% for language in languages %}
+          {% if languages.first.code == language.code %}
+          {% assign lang = language.code %}
+          {% endif %}
+          {% endfor %}
+
+          {% if options.bank_transfer_payment %}
+          <li class="list-inline-item">
+            <span>
+              {% if lang == 'es' or lang == 'cl' or lang == 'mx' or lang == 'co' %}
+              <img src="{{ 'pay-wire-es.png' | asset }}" alt="{% t 'Wire Transfer' %}">
+              {% elsif lang == 'pt' or lang == 'br' %}
+              <img src="{{ 'pay-wire-pt.png' | asset }}" alt="{% t 'Wire Transfer' %}">
+              {% else %}
+              <img src="{{ 'pay-wire-en.png' | asset }}" alt="{% t 'Wire Transfer' %}">
+              {% endif %}
+            </span>
+          </li>
+          {% endif %}
+          {% if options.manual_payment %}
+          <li class="list-inline-item">
+            <span>
+              {% if lang == 'es' or lang == 'cl' or lang == 'mx' or lang == 'co' %}
+              <img src="{{ 'pay-manual-es.png' | asset }}" alt="{% t 'Manual Payment' %}">
+              {% elsif lang == 'pt' or lang == 'br' %}
+              <img src="{{ 'pay-manual-pt.png' | asset }}" alt="{% t 'Manual Payment' %}">
+              {% else %}
+              <img src="{{ 'pay-manual-en.png' | asset }}" alt="{% t 'Manual Payment' %}">
+              {% endif %}
+            </span>
+          </li>
+          {% endif %}
+        </ul>
